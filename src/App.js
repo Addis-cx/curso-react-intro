@@ -3,7 +3,6 @@ import { TodoSearch } from './TodoSearch';
 import { TodoList } from './TodoList';
 import { TodoItem } from './TodoItem';
 import { CreateTodoButton } from './CreateTodoButton';
-import './App.css';
 
 const defaultTodos = [ 
   { text:"Hola", complet:false }, 
@@ -19,7 +18,7 @@ function App() {
       <TodoList>
         {defaultTodos.map(todo => (
           <TodoItem key={todo.text}
-          text= {todo.text} />) ) }
+          text= {todo.text} complet={todo.complet}/>)) }
       </TodoList>
 
       <CreateTodoButton />
