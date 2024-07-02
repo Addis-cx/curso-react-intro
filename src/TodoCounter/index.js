@@ -1,4 +1,4 @@
-import '../Style/TodoCounter.css'
+import './TodoCounter.css'
 // const styles = {
 //   backgroundColor: "red"
 // }
