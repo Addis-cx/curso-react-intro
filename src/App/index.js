@@ -1,10 +1,6 @@
 import React from 'react';
-import { TodoCounter } from '../TodoCounter';
-import { TodoSearch } from '../TodoSearch';
-import { TodoList } from '../TodoList';
-import { TodoItem } from '../TodoItem';
-import { CreateTodoButton } from '../CreateTodoButton';
 import { useLocalStorage } from './useLocalStorage';
+import { AppUI } from './App';
 
 function App() {
   const [ todos, saveTodos] = useLocalStorage('TODOS_V1', []);  
@@ -15,7 +11,7 @@ function App() {
     todo => !!todo.completed
   ).length;  
   
-  const todoSearched = todos.filter( 
+  const searchedTodos = todos.filter( 
     (todo) => {
       const todoText = todo.text.toLocaleLowerCase();
       const searchText = searchValue.toLocaleLowerCase();
@@ -41,33 +37,17 @@ function App() {
   };
 
   return (
-    <>
-      <TodoCounter 
-        completed={completedTodos} 
-        total={totalTodos} 
-        />
-      <TodoSearch
-      searchValue={searchValue}
-      setsearchValue={setsearchValue}
-      />
-      
-      <TodoList>
-        {todoSearched.map(todo => (
-          <TodoItem 
-          key={todo.text}
-          text= {todo.text} 
-          completed= {todo.completed}
-          onComplete= {() => completeTodo(todo.text)}
-          onDelete={() => deleteTodo(todo.text)}
-          />
-          ))}
-      </TodoList>
-
-      <CreateTodoButton />
-
-    </>
-  );
-}
+  <AppUI 
+    completedTodos = {completedTodos}
+    totalTodos = {totalTodos}
+    searchValue = {searchValue}
+    setsearchValue = {setsearchValue}
+    searchedTodos = {searchedTodos}
+    completeTodo = {completeTodo}
+    deleteTodo = {deleteTodo}
+  />
+);
+};
 
 export default App;
 

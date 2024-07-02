@@ -15,11 +15,11 @@ function useLocalStorage(itemName, initialValue) {
     const [item, setItem] = React.useState(parsedItem);
     
     const saveItem = (newItem) => {
-      localStorage.setItem(itemName, JSON.strin(newItem));
+      localStorage.setItem(itemName, JSON.stringify(newItem));
       setItem(newItem);
     };
     
     return [item, saveItem]
   }  
 
-  export { useLocalStorage }
+export { useLocalStorage }
