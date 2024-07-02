@@ -1,9 +1,9 @@
 import React from 'react';
-import { TodoCounter } from './TodoCounter.js';
-import { TodoSearch } from './TodoSearch.js';
-import { TodoList } from './TodoList.js';
-import { TodoItem } from './TodoItem.js';
-import { CreateTodoButton } from './CreateTodoButton.js';
+import { TodoCounter } from './TodoCounter';
+import { TodoSearch } from './TodoSearch';
+import { TodoList } from './TodoList';
+import { TodoItem } from './TodoItem';
+import { CreateTodoButton } from './CreateTodoButton';
 
 const defaultTodos = [ 
   { text:"Hola", completed:false }, 
@@ -48,7 +48,7 @@ function App() {
     <>
       <TodoCounter 
         total={completedTodos} 
-        complet={totalTodos} />
+        completed={totalTodos} />
       <TodoSearch
       searchValue={searchValue}
       setsearchValue={setsearchValue}
@@ -59,7 +59,7 @@ function App() {
           <TodoItem 
           key={todo.text}
           text= {todo.text} 
-          completed= {todo.complete}
+          completed= {todo.completed}
           onComplete= {() => completeTodo(todo.text)}
           onDelete={() => deleteTodo(todo.text)}
           />

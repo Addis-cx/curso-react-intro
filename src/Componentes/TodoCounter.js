@@ -3,10 +3,10 @@ import '../Style/TodoCounter.css'
 //   backgroundColor: "red"
 // }
 
-function TodoCounter( { total, complet} ) {
+function TodoCounter( { total, completed} ) {
     return (
       <h1 className='TodoCounter'>
-        Has completado { complet } de { total } TODOS
+        Has completado { completed } de { total } TODOS
       </h1>
     );
   }
