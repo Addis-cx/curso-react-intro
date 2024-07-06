@@ -1,7 +1,5 @@
-import './TodoCounter.css'
-// const styles = {
-//   backgroundColor: "red"
-// }
+import React from 'react';
+import './TodoCounter.css';
 
 function TodoCounter( { total, completed} ) {
     return (
@@ -12,9 +10,3 @@ function TodoCounter( { total, completed} ) {
   }
 
   export { TodoCounter };
-  // <h1 style={{
-  //   backgroundColor: "red",
-  //   textAlign: "24px",
-  //   margin: 0,
-  //   padding: "48px"
-  // }}>
