@@ -1,8 +1,17 @@
+:root {
+  --green:#8FBC8F;
+  --copper-red:#D32F2F;
+  --brown:#A1887F;
+  --grey:#BDBDBD;
+  --white:#FAFAFA;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(130deg, rgba(250,250,250,1) 0%, rgba(143,188,143,1) 100%)
 }
 
 code {

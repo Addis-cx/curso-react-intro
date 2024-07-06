@@ -1,7 +1,7 @@
 .TodoSearch {
-    background:#f9fbfc;
+    background: var(--white);
     border-radius:2px;
-    border:2px solid #202329;
+    border:2px solid var(--green);
     margin:0 24px;
     height:64px;
     width:calc(100% - 62px);
@@ -13,10 +13,10 @@
     box-shadow:0 5px 50px rgba(32,35,41,.25)
 }
 .TodoSearch::placeholder {
-    color:#a5a5a5;
+    color: var(--grey);
     font-family:montserrat;
     font-weight:400
 }
 .TodoSearch:focus {
-    outline-color:#61dafa
+    outline-color:var(--copper-red);
 }
