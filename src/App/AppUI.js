@@ -7,18 +7,21 @@ import { TodosLoading } from '../TodosLoading'
 import { TodosError } from '../TodosError'
 import { EmptyTodos } from '../EmptyTodos'
 import { CreateTodoButton } from '../CreateTodoButton';
+import { TodoForm } from '../TodoForm';
+import { Modal } from '../Modal';
+import { TodoContext } from '../TodosContext';
 
-function AppUI({ 
-    // completedTodos,
-    // totalTodos,
-    // searchValue,
-    // setsearchValue,
-    // loading,
-    // error,
-    // searchedTodos,
-    // completeTodo,
-    // deleteTodo,
-}) {
+function AppUI() {
+  const {
+    loading,
+    error,
+    searchedTodos,
+    completeTodo,
+    deleteTodo,
+    openModal,
+    setOpenModal,
+  } = React.useContext(TodoContext);
+
     return (
         <>
           <TodoCounter />
@@ -27,9 +30,9 @@ function AppUI({
           <TodoList>
             {loading && (
               <> 
-                <TodosLoading />,
-                <TodosLoading />,
-                <TodosLoading />,
+                <TodosLoading />
+                <TodosLoading />
+                <TodosLoading />
               </>
             )}
             {error && <TodosError />}
@@ -44,12 +47,19 @@ function AppUI({
               onDelete={() => deleteTodo(todo.text)}
               />
               ))}
-          </TodoList>
+          </TodoList>  
     
-          <CreateTodoButton />
-    
+          <CreateTodoButton 
+            setOpenModal={setOpenModal}
+          />
+
+          {openModal && (
+            <Modal>
+              <TodoForm />
+            </Modal>
+          )}
         </>
       );
-}
+};
 
 export { AppUI }
