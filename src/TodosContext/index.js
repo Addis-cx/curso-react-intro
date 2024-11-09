@@ -25,7 +25,16 @@ function TodoProvider({ children }) {
       const todoText = todo.text.toLocaleLowerCase();
       const searchText = searchValue.toLocaleLowerCase();
       return todoText.includes(searchText);
-     });    
+     });
+
+    const addTodo = (text) => {
+        const newTodos = [...todos];
+        newTodos.push({
+            text,
+            completed: false,
+        })
+        saveTodos(newTodos);
+    };
     
     const completeTodo = (text) => {
         const newTodos = [...todos];
@@ -56,12 +65,13 @@ function TodoProvider({ children }) {
             loading,
             error,
             searchedTodos,
+            addTodo,
             completeTodo,
             deleteTodo,
         }}>
             { children }
         </TodoContext.Provider>
-    )
+    );
 }
 
 export { TodoContext, TodoProvider };
